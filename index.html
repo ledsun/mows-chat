@@ -1,1 +1,31 @@
-<script src="bundle.js"></script>
+<html>
+
+<head>
+  <script src="bower_components/vue/dist/vue.js"></script>
+  <script src="bundle.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    {{title}}
+    <input v-model="message"></input>
+    <input type="button" value="送信" v-on="click: sendMessage()"></input>
+  </div>
+
+</body>
+<script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      title: 'Hello'
+    },
+    methods: {
+      sendMessage: function() {
+        var app = this;
+        console.log(app.message)
+      }
+    }
+  })
+</script>
+
+</html>

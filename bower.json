@@ -1,0 +1,27 @@
+{
+  "name": "mows-chat",
+  "version": "0.0.0",
+  "authors": [
+    "shigeru.nakajima <shigeru.nakajima@luxiar.com>"
+  ],
+  "main": "app.js",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "mqtt",
+    "websocket",
+    "chat"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "vue": "~0.10.6"
+  }
+}
