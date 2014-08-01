@@ -10,6 +10,11 @@
     {{title}}
     <input v-model="message"></input>
     <input type="button" value="送信" v-on="click: sendMessage()"></input>
+    <ul>
+      <li v-repeat="messages">
+        {{content}}
+      </li>
+    </ul>
   </div>
 
 </body>
@@ -17,14 +22,22 @@
   var app = new Vue({
     el: '#app',
     data: {
-      title: 'Hello'
+      title: 'Hello',
+      messages: []
     },
     methods: {
       sendMessage: function() {
         var app = this;
-        console.log(app.message)
+        if (app.message) mows_client.publish('message', app.message)
+        app.message = ''
       }
     }
+  })
+
+  mows_client.on('message', function() {
+    app.messages.push({
+      content: arguments[1]
+    })
   })
 </script>
 

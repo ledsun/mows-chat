@@ -3,12 +3,6 @@ var mows = require('mows'),
     keepalive: 10000
   })
 
-client
-  .subscribe('message')
-  .on('message', function() {
-    console.log(arguments);
-  })
+client.subscribe('message')
 
-setInterval(function() {
-  client.publish('message', '1234567890');
-}, 1000)
+window.mows_client = client
