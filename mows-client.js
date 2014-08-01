@@ -1,5 +1,5 @@
 var mows = require('mows'),
-  client = mows.createClient(3000, {
+  client = mows.createClient(parseInt(location.port, 10), {
     keepalive: 10000
   })
 
